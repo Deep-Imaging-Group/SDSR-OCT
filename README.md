@@ -1,4 +1,4 @@
-# "Simultaneous denoising and super-resolution of optical coherence tomography images based on generative adversarial network" (SDSR-OCT)</br>
+# ["Simultaneous denoising and super-resolution of optical coherence tomography images based on generative adversarial network"](https://www.osapublishing.org/oe/abstract.cfm?uri=oe-27-9-12289) (SDSR-OCT)</br>
 ### the description of files in this repository:
 1. "dataset.py" code for load training and testing data</br>
 2. "main_2x.py main_4x.py main_8x.py" code for training and testing of the models</br>
