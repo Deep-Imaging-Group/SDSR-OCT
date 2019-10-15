@@ -178,7 +178,7 @@ def train_process(dataloader, generator, discriminator, Gen_optim, Dis_optim, co
 			fake_out = discriminator (fake_imgs)
 			fake_loss = GAN_loss (fake_out, True)
 
-			g_loss = opt.pixel_loss_weights*loss_pixel + opt.content_loss_weights*loss_content + opt.GANLoss_weights * (real_loss + fake_loss) / 2
+			g_loss = opt.pixel_loss_weights*loss_pixel + opt.content_loss_weights*loss_content + opt.GANLoss_weights * fake_loss
 			g_loss.backward ()
 			Gen_optim.step ()
 
