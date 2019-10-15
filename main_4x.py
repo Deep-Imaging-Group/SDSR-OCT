@@ -175,11 +175,8 @@ def train_process(dataloader, generator, discriminator, Gen_optim, Dis_optim, co
 			real_features = Variable (feature_extractor (real_imgs).data, requires_grad=False)
 			loss_content = content_loss (gen_features, real_features)
 
-			real_out = discriminator (real_imgs)
 			fake_out = discriminator (fake_imgs)
-
-			real_loss = GAN_loss (real_out - torch.mean (fake_out), True)
-			fake_loss = GAN_loss (fake_out - torch.mean (real_out), False)
+			fake_loss = GAN_loss (fake_out, True)
 
 			g_loss = opt.pixel_loss_weights*loss_pixel + opt.content_loss_weights*loss_content + opt.GANLoss_weights * (real_loss + fake_loss) / 2
 			g_loss.backward ()
